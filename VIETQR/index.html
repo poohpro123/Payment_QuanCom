@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>VIET QR IMPLEMENTATION</title>
+    <style>
+         .cart-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .item-name {
+            margin-right: 20px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-button {
+            padding: 20px 25px;
+            margin: 0 5px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 3px;
+        }
+
+        .quantity-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .quantity {
+            width: 40px;
+            height:40px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="input-field">
+    <input type="text" id="value" placeholder="Enter value (.000 VND)">
+    <button onclick="generateQR()">Create QR</button>
+    </div> -->
+
+
+    <div class="cart-item">
+        <p class="item-name" style="font-weight: bold;font-size: 30px;">MON 35</p>
+        <div class="quantity-controls">
+            <button class="quantity-button" onclick="decrement('quantity1',35000)">-</button>
+            <input type="text" id="quantity1" class="quantity" value="0" readonly>
+            <button class="quantity-button" onclick="increment('quantity1',35000)">+</button>
+        </div>
+    </div>
+    
+    <div class="cart-item">
+        <p class="item-name" style="font-weight: bold; font-size:30px">MON 40</p>
+        <div class="quantity-controls">
+            <button class="quantity-button" onclick="decrement('quantity2',40000)">-</button>
+            <input type="text" id="quantity2" class="quantity" value="0" readonly>
+            <button class="quantity-button" onclick="increment('quantity2',40000)">+</button>
+        </div>
+    </div>
+
+    <div class="input-field">
+        <h2 style="font-size: 25px">TỔNG TIỀN: </h2> <h2 id="TotalPrice" style="font-size:25px">0</h2>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+        <button class="quickLink-button" onclick="quickLink()">TÍNH TIỀN</button>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="hideImage()"></div>
+
+
+    <img src="" id="quickLink" alt="QR Code">
+
+    <h1 style="display:none" id="thongBao">BẤM LẠI ĐI MẸ, KHÔNG CÓ TIỀN</h1>
+    
+
+    <!--<div class="img">
+        <img src="" id="quickLink" alt="Image" style="display:none; width: 30%; height: 30%">
+    </div>-->
+
+
+    <script src="JS/index.js"></script>
+</body>
+</html>
